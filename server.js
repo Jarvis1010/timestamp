@@ -4,6 +4,8 @@ Date.prototype.valid = function() {
   return this.getTime() === this.getTime();
 };
 
+var port = process.env.PORT||8080;
+
 app.get('/', function(req,res){
     res.send({});
 });
@@ -35,6 +37,6 @@ function naturalDateString(d){
     return months[d.getMonth()]+" "+d.getDate()+", "+d.getFullYear();
 }
 
-app.listen(8080,function(){
+app.listen(port,function(){
     console.log('serverstarted');
 });

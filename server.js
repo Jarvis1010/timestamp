@@ -7,7 +7,7 @@ Date.prototype.valid = function() {
 var port = process.env.PORT||8080;
 
 app.get('/', function(req,res){
-    res.send("Testing");
+    res.send("Enter date or unix time stamp at end of URL above to get Time stamp");
 });
 
 app.get('/:Date',function(req,res){

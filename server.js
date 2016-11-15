@@ -1,13 +1,13 @@
 var express=require('express');
 var app=express();
-Date.prototype.valid = function() {
-  return this.getTime() === this.getTime();
-};
+var path = require('path');
 
 var port = process.env.PORT||8080;
 
-app.get('/', function(req,res){
-    res.send("Enter date or unix time stamp at end of URL above to get Time stamp");
+app.use(express.static('public'));
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/:Date',function(req,res){
